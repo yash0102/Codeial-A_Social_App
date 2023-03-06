@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <link rel="stylesheet" type="text/css" href="/css/layout.css">
+        <%- style %>    <!-- extract css link from ex.ejs, and attached to here -->
+    </head>
+    <body>
+       <%- include('_header'); %>
+
+        <%- body %>   <!--contains variable part -->
+
+        <%- include('_footer'); %>
+
+        <%- script %>  <!-- extract script link from ex.ejs and attached to here -->
+    </body>
+</html>
