@@ -10,7 +10,7 @@ const postSchema = new mongoose.Schema({
         ref: 'User'
     }
 },{
-    timestamps: true
+    timestamps: true // it shows a created and updated time
 });
 
 const Post = mongoose.model('Post',postSchema);
