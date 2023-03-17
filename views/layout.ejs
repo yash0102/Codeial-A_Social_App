@@ -4,12 +4,16 @@
             <%= title %>
         </title>
         <link rel="stylesheet" type="text/css" href="/css/layout.css">
+        <link rel="stylesheet" type="text/css" href="/css/header.css">
+        <link rel="stylesheet" type="text/css" href="/css/footer.css">
         <%- style %>    <!-- extract css link from ex.ejs, and attached to here -->
     </head>
     <body>
        <%- include('_header'); %>
 
-        <%- body %>   <!--contains variable part -->
+       <main id="layout-main">
+            <%- body %>   <!--contains variable part -->
+       </main>
 
         <%- include('_footer'); %>
 
