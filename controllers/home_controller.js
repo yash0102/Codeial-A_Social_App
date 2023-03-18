@@ -7,6 +7,12 @@ module.exports.home = (req ,res)=>{
     // populate the user of each post ?
    Post.find({})
    .populate('user') // populate the `user` field with the corresponding user document
+   .populate({
+    path: 'comments',
+    populate: {
+        path: 'user',
+    }
+   })
    .then((posts)=>{
     return res.render('home',{
         title: 'Codeail | Home',
