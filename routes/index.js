@@ -9,6 +9,7 @@ console.log('router loaded');
 router.get('/',homeController.home);
 router.use('/users',require('./users')); // any request come from "/users" it requires
 router.use('/posts',require('./posts'));
+router.use('/comments',require('./comments'));
 
 
 // for any further routes , access from here

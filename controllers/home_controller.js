@@ -5,7 +5,8 @@ module.exports.home = (req ,res)=>{
     // res.cookie('user_id',25);
     
     // populate the user of each post ?
-   Post.find({}).populate('user') // populate the `user` field with the corresponding user document
+   Post.find({})
+   .populate('user') // populate the `user` field with the corresponding user document
    .then((posts)=>{
     return res.render('home',{
         title: 'Codeail | Home',
