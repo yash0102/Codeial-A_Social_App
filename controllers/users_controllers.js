@@ -11,6 +11,17 @@ module.exports.profile = function (req, res) {
  
 };
 
+module.exports.update = (req, res)=>{
+  if(req.user.id == req.params.id){
+    User.findByIdAndUpdate(req.params.id , req.body , function(err, post){
+      return res.redirect('back');
+    });
+  }else{
+    return res.status(401).send('Unauthorized');
+  }
+}
+
+
 // render the sign up page
 module.exports.signUp = function (req, res) {
     if(req.isAuthenticated()){
