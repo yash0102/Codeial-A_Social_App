@@ -18,9 +18,5 @@ const postSchema = new mongoose.Schema({
     timestamps: true // it shows a created and updated time
 });
 
-postSchema.methods.remove = function() {
-    return this.model('Post').deleteOne({ _id: this._id });
-  };
-
 const Post = mongoose.model('Post',postSchema);
 module.exports = Post;

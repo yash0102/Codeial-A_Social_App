@@ -18,5 +18,6 @@ const commentSchema = new mongoose.Schema({
     timestamps: true // it shows a created and updated time
 });
 
+
 const comment = mongoose.model('Comment',commentSchema);
 module.exports = comment;

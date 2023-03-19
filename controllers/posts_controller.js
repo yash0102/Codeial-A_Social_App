@@ -20,19 +20,17 @@ module.exports.create =(req, res) => {
 //     });
 // }
 
-
-module.exports.destroy = (req, res)=>{
-  Post.findById(req.params.id).then( (post) =>{
+ module.exports.destroy =async (req, res)=>{
+ let post = await Post.findById(req.params.id) 
   // .id means converting the object id into string
   if(post.user == req.user.id){
-      post.remove().then(()=>{
+    console.log(post);
+      post.remove();
         Comment.deleteMany({post: req.params.id}).then(function(err){
           return res.redirect('back');
         })
-      });
-       
-    }else {
+      }else {
       return res.redirect('back');
     }
- });
+
 }

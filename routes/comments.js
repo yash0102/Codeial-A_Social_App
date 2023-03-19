@@ -7,5 +7,7 @@ const commentsController = require('../controllers/comments_controller');
 const { route } = require('./users');
 
 router.post('/create',passport.ckeckAuthentication ,commentsController.create);
+router.get('/destroy/:id',passport.ckeckAuthentication ,commentsController.destroy);
+
 
 module.exports = router;

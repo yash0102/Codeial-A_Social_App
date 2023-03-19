@@ -43,3 +43,38 @@ module.exports.create = function(req ,res){
 }
 */
 
+module.exports.destroy =async (req, res)=>{
+  let comment = await Comment.findById(req.params.id);
+  // console.log(req.user);
+   // .id means converting the object id into string
+   if(comment.user == req.user.id){
+
+          let postId = comment.post; 
+          
+          comment.remove();
+          Post.findByIdAndUpdate(postId, { $pull : {comments: req.params.id}}, (err)=>{
+              return res.redirect('back');
+          })
+     } else {
+           return res.redirect('back');
+        }
+ 
+ }
+
+// module.exports.destroy = (req, res)=>{
+//   Post.findById(req.params.id, function(err,comment){
+//   // .id means converting the object id into string
+//   if(comment.user == req.user.id){
+
+//       let postId = comment.post; 
+      
+//       comment.remove();
+//       Post.findByIdAndUpdate(postId, { $pull : {comments: req.params.id}}, (err, post)=>{
+//           return res.redirect('back');
+//       })
+//  } else {
+//        return res.redirect('back');
+//     }
+// })
+// }
+  
