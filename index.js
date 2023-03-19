@@ -12,6 +12,10 @@ const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 // Connect Mongo is a popular middleware designed to manage MongoDB sessions with ExpressJS
 const MongoStore = require('connect-mongo');
+const flash = require('connect-flash');
+const customMware = require('./config/middleware');
+
+
 
 
 // in version middleware were not in use
@@ -79,6 +83,9 @@ app.use(passport.session());  // Creates a login session for users using Passpor
 
 // Calling setAuthenticatedUser on every request allwos only authenticated users to access certain routes/routes that require authentication
 app.use(passport.setAuthenticatedUser);
+
+app.use(flash());
+app.use(customMware.setFlash);
 
 // use express router , to rendere various routes
 app.use('/', require('./routes'));// any request comes, it requires
