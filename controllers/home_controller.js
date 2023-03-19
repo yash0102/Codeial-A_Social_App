@@ -1,4 +1,5 @@
 const Post = require('../models/post');
+const User = require('../models/user');
 
 module.exports.home = (req ,res)=>{
     // console.log(req.cookies);
@@ -13,11 +14,17 @@ module.exports.home = (req ,res)=>{
         path: 'user',
     }
    })
-   .then((posts)=>{
-    return res.render('home',{
-        title: 'Codeail | Home',
-        posts: posts
-    })
+   .exec((err,posts)=>{
+
+    User.find({}, (err,users)=>{
+        console.log(users);
+        return res.render('home',{
+            title: 'Codeail | Home',
+            posts: posts,
+            all_users: users 
+        })
+    });
+   
    })
 }
 
