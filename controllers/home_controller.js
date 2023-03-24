@@ -8,6 +8,7 @@ module.exports.home = async (req, res) => {
   try {
     // populate the user of each post ?
     let posts = await Post.find({})
+      .sort('-createdAt') // this will sort a/q to time , if 1, 2, 3 --> 3 2 1 1st created 1 so it's last
       .populate("user") // populate the `user` field with the corresponding user document
       .populate({
         path: "comments",
