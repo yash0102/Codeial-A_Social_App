@@ -14,13 +14,46 @@
                 // The data attribute is used to set or get data values associated with forms
                 data: newPostForm.serialize(),
                 success: function(data){
-                    console.log(data);
+                    let newPost = newPostDom(data.data.post);
+                    $('#posts-list-container>ul').prepend(newPost); // prepend meand add front of the list
                 }, error: function(error){
                     console.log(error.responseText);
                 }
             })
         })
     }
+
+    // method to create a post in DOM
+let newPostDom = function(post){
+    return $(` <li id="post-${ post._id }">
+    <p>
+      
+         <small>
+           <a class="delete-post-button" href="/posts/destroy/${ post.id }">X</a>
+         </small>
+      
+         ${ post.content } <br>
+         <small>
+           ${ post.user.name }
+         </small>
+    </p>
+      <div class="post-comments">
+       
+         <form action="/comments/create" method="post">
+           <input type="text"  name="content" placeholder="Type Comments..." required>
+           <input type="hidden" name="post" value="${ post._id }" >
+           <input type="submit"  value="Add Comment">
+         </form>
+        
+  
+         <div class="post-comments-list">
+           <ul id="post-comments-${ post._id }">
+           </ul>
+         </div>
+      </div>
+    </li> `)}
+
+  
 
     createPost();
 }
