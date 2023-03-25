@@ -17,6 +17,10 @@
                     let newPost = newPostDom(data.data.post);
                     $('#posts-list-container>ul').prepend(newPost); // prepend meand add front of the list
                     deletePost($(' .delete-post-button', newPost));
+                    
+                    // call the create comment
+                    new PostComments(data.data.post_id);
+
                   }, error: function(error){
                     console.log(error.responseText);
                 }
@@ -40,7 +44,7 @@ let newPostDom = function(post){
     </p>
       <div class="post-comments">
        
-         <form action="/comments/create" method="post">
+         <form id="post-{ post._id }-comments-form" action="/comments/create" method="post">
            <input type="text"  name="content" placeholder="Type Comments..." required>
            <input type="hidden" name="post" value="${ post._id }" >
            <input type="submit"  value="Add Comment">
