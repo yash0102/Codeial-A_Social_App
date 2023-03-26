@@ -44,6 +44,8 @@ app.use(cookieParser());
 // to serve static files stored in the ./assets directory 
 app.use(express.static('./assets'));
 
+app.use('/uploads',express.static(__dirname + '/uploads'));
+
 app.use(expressLayouts); // to use a default layout
 
 //extract style and script from sub pages into layout 
