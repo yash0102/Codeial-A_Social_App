@@ -10,6 +10,7 @@ const session = require('express-session');
 // Passport is a JS library used to manage user authentication related concerns
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
+const passportJWT = require('./config/passport-jwt-strategy');
 // Connect Mongo is a popular middleware designed to manage MongoDB sessions with ExpressJS
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
