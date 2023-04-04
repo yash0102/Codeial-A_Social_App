@@ -28,7 +28,13 @@ const userSchema = new mongoose.Schema({
     isTokenValid: {
         type: Boolean,
         default: false
-    }
+    },
+    friendships: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Friendship'
+        }
+    ]
 },{
     timestamps: true // track the time duration of an operation.
 });
