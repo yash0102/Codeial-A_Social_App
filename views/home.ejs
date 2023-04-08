@@ -35,8 +35,8 @@
   <%- include('_chat_box') %>
 </div>
 
-<script src="/js/home_post.js"></script>
 <script src="/js/home_post_comments.js"></script>
+<script src="/js/home_post.js"></script>
 <script src="js/toggle_likes.js"></script>
 <script>
     $('.toggle-like-button').each(function(){
@@ -46,3 +46,9 @@
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"></script>
 <script src="/js/chat_engine.js"></script>
+
+<% if(locals.user){ %>
+<script>
+    new ChatEngine('user-chat-box', '<%= locals.user._id %>')
+</script>
+<% } %>
