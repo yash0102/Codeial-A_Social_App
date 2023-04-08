@@ -2,17 +2,18 @@
   position: fixed;
   bottom: 10px;
   right: 10px;
-  border: 1px dashed gray;
+  border: 1px dashed grey;
   height: 350px;
   width: 300px;
+  background: white;
   padding: 5px;
-  box-shadow: 1px 1px 1px 1px #d3d3d3;
+  box-shadow: 1px 1px 1px 1px lightgrey;
 }
 #user-chat-box #chat-messages-list {
   list-style: none;
   padding: 10px;
   height: 70%;
-  background-color: #fff;
+  background-color: white;
   overflow: auto;
 }
 #user-chat-box #chat-messages-list .other-message {
@@ -47,7 +48,9 @@
   height: 50%;
   width: 30%;
   font-size: 25px;
-  color: #fff;
+  color: white;
   border: none;
   background: #58d258;
 }
+
+/*# sourceMappingURL=chat_box.css.map */
