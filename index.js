@@ -1,5 +1,6 @@
 // Required modules are imported and an instance of express server created.
 const express = require('express');
+const env = require('./config/environment');
 const cookieParser = require('cookie-parser');
 const app = express();
 const port = 8000;
@@ -16,8 +17,6 @@ const passportGoogle = require('./config/passport-google-oauth2-strategy');
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const customMware = require('./config/middleware');
-const { log } = require('console');
-
 
 // setup the chat server to be used to with socket.io
 const chatServer = require('http').Server(app);
@@ -38,7 +37,7 @@ chatServer.listen(5000, function (error) {
 // const sassMiddleware = require('node-sass-middleware'); 
 
 // app.use(sassMiddleware({
-//     src: '/assets/scss',
+//     src: '/assets/scss', 
 //     dest: '/assets/css',
 //     debug: true,
 //     outputStyle: 'extended',
@@ -57,7 +56,7 @@ app.use(express.urlencoded()); // added a parser,
 app.use(cookieParser());
 
 // to serve static files stored in the ./assets directory 
-app.use(express.static('./assets'));
+app.use(express.static(env.asset_path));
 
 app.use('/uploads',express.static(__dirname + '/uploads'));
 
@@ -76,7 +75,7 @@ app.set('views','./views');
 app.use(session({
     name: 'codeial',
     // TODO change the secret before deployment in production mode
-    secret: 'blahsomething',
+    secret: env.session_cookie_key,
     saveUninitialized: false,
     resave: false,
     cookie: {
