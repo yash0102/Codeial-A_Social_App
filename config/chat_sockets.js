@@ -16,5 +16,14 @@ module.exports.chatSockets = function(socketServer){
         socket.on('disconnect', function(){
             console.log('socket disconnected!');
         });
+
+        socket.on('join_room', function(data){
+            console.log('joining request received', data);
+
+            // this will join the chatroom(codeial) if present if not than create the chatroom 
+            socket.join(data.chatroom);
+
+            io.in(data.chatroom).emit('user_joined', data);
+        })
     });
 }
