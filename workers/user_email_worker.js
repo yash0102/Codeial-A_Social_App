@@ -1,6 +1,8 @@
-const queue = require('../config/kue');
+// const queue = require('../config/kue');
+import queue from '../config/kue';
 
-const resetPasswordMailer = require('../mailers/reset_password_mailer');
+// const resetPasswordMailer = require('../mailers/reset_password_mailer');
+import resetPasswordMailer from '../mailers/reset_password_mailer'
 
 queue.process('user-emails', function(job, done)
 {

@@ -1,4 +1,5 @@
-const nodeMailer = require('../config/nodemailer');
+// const nodeMailer = require('../config/nodemailer');
+import nodeMailer from '../config/nodemailer';
 
 // this is the another way of exporting a method
 exports.resetPassword = (user)=>{

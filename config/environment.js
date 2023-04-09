@@ -1,6 +1,10 @@
-const fs = require('fs');
-const rfs = require('rotating-file-stream');
-const path = require('path');
+// const fs = require('fs');
+// const rfs = require('rotating-file-stream');
+// const path = require('path');
+
+import fs from 'fs';
+import rfs from 'rotating-file-stream';
+import path from 'path';
 
 const logDirectory = path.join(__dirname, '../production_log');
 fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);

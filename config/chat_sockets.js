@@ -1,6 +1,6 @@
-
+import socketIO from 'socket.io';
 module.exports.chatSockets = function(socketServer){
-    let io = require('socket.io')(socketServer ,{         
+    let io = socketIO(socketServer ,{         
             allowEIO3: true,
             cors:{             
                 origin:'http://localhost:8000',

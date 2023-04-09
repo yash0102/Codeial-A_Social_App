@@ -1,6 +1,10 @@
-const User =  require('../../../models/user');
-const jwt = require('jsonwebtoken');
-const env = require('../../../config/environment');
+// const User =  require('../../../models/user');
+// const jwt = require('jsonwebtoken');
+// const env = require('../../../config/environment');
+
+import User from '../../../models/user';
+import jwt from 'jsonwebtoken';
+import env from '../../../config/environment';
 
 
 

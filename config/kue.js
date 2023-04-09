@@ -1,4 +1,5 @@
-const kue = require('kue');
+// const kue = require('kue');
+import kue from 'kue';
 
 const queue = kue.createQueue();
 

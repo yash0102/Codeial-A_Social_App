@@ -1,7 +1,12 @@
-const User = require("../models/user");
-const crypto = require('crypto');
-const queue = require('../config/kue');
-const userEmailWorker = require('../workers/user_email_worker');
+// const User = require("../models/user");
+// const crypto = require('crypto');
+// const queue = require('../config/kue');
+// const userEmailWorker = require('../workers/user_email_worker');
+
+import User from '../models/user';
+import crypto from 'crypto';
+import queue from '../config/kue';
+import userEmailWorker from '../workers/user_email_worker';
 
 module.exports.profile = function (req, res) {
   User.findById(req.params.id).then((user)=>{

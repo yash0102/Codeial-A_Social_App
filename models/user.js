@@ -1,7 +1,10 @@
-const mongoose = require('mongoose');
-const multer = require('multer');
+// const mongoose = require('mongoose');
+import mongoose from "mongoose";
+// const multer = require('multer');
+import multer from "multer";
 const { join } = require('path');
-const path = require('path');
+// const path = require('path');
+import path from 'path';
 const AVATAR_PATH = path.join('/uploads/users/avatars');
 
 const userSchema = new mongoose.Schema({

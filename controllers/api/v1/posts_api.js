@@ -1,5 +1,7 @@
-const Post = require('../../../models/post');
-const Comment = require('../../../models/comment');
+// const Post = require('../../../models/post');
+import Post from '../../../models/post';
+// const Comment = require('../../../models/comment');
+import Comment from '../../../models/comment';
 
 module.exports.index = async function(req ,res){
      // populate the user of each post ?

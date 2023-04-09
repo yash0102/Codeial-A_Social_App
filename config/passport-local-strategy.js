@@ -1,9 +1,15 @@
-const passport = require("passport");
-const User = require("../models/user");
+// const passport = require("passport");
+// const User = require("../models/user");
 
-const LocalStrategy = require("passport-local").Strategy;
+// const LocalStrategy = require("passport-local").Strategy;
 
-const user = require("../models/user");
+// const user = require("../models/user");
+
+import passport from "passport";
+import User from "../models/user";
+import LocalStrategy from "passport-local";
+LocalStrategy.Strategy;
+import user from "../models/user";
 
 // authentication using passport
 passport.use(

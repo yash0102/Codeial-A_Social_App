@@ -1,9 +1,17 @@
-const passport = require('passport');
-const JWTStrategy = require('passport-jwt').Strategy;
-const ExtractJWT = require('passport-jwt').ExtractJwt;
-const env = require('./environment');
+// const passport = require('passport');
+// const JWTStrategy = require('passport-jwt').Strategy;
+// const ExtractJWT = require('passport-jwt').ExtractJwt;
+// const env = require('./environment');
 
-const User = require('../models/user');
+// const User = require('../models/user');
+
+import passport from "passport";
+import JWTStrategy from "passport-jwt";
+JWTStrategy.Strategy;
+import ExtractJWT from "passport-jwt";
+ExtractJWT.ExtractJwt;
+import env from "./environment";
+import User from "../models/user";
 
 
 let opts = {

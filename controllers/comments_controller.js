@@ -1,9 +1,16 @@
-const Comment = require("../models/comment");
-const Post = require("../models/post");
-const Like = require('../models/like');
-const commentsMailer = require('../mailers/comments_mailer');
-const queue = require('../config/kue');
-const commentEmailWorker = require('../workers/comment_email_worker');
+// const Comment = require("../models/comment");
+// const Post = require("../models/post");
+// const Like = require('../models/like');
+// const commentsMailer = require('../mailers/comments_mailer');
+// const queue = require('../config/kue');
+// const commentEmailWorker = require('../workers/comment_email_worker');
+
+import Comment from '../models/comment';
+import Post from '../models/post';
+import Like from '../models/like';
+import commentsMailer from '../mailers/comments_mailer';
+import queue from '../config/kue';
+import commentEmailWorker from '../workers/comment_email_worker'
 
 module.exports.create = async (req, res) => {
   try {

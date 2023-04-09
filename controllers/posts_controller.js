@@ -1,6 +1,10 @@
-const Post = require("../models/post");
-const Comment = require("../models/comment");
-const Like = require('../models/like');
+// const Post = require("../models/post");
+// const Comment = require("../models/comment");
+// const Like = require('../models/like');
+
+import Post from '../models/post';
+import Like from '../models/like';
+import Comment from '../models/comment';
 
 module.exports.create = async (req, res) => {
   try {

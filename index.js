@@ -1,27 +1,43 @@
-// Required modules are imported and an instance of express server created.
-const express = require('express');
-const env = require('./config/environment');
-const logger = require('morgan');
-const cookieParser = require('cookie-parser');
+// // Required modules are imported and an instance of express server created.
+// const express = require('express');
+import express from 'express';
+// const env = require('./config/environment');
+import env from './config/environment';
+// const logger = require('morgan');
+import logger from 'morgan'
+// const cookieParser = require('cookie-parser');
+import cookieParser from 'cookie-parser';
 const app = express();
 const port = 8000;
-const expressLayouts = require('express-ejs-layouts');
-const db = require('./config/mongoose');
-// used for session cookie
-const session = require('express-session');
-// Passport is a JS library used to manage user authentication related concerns
-const passport = require('passport');
-const passportLocal = require('./config/passport-local-strategy');
-const passportJWT = require('./config/passport-jwt-strategy');
-const passportGoogle = require('./config/passport-google-oauth2-strategy');
-// Connect Mongo is a popular middleware designed to manage MongoDB sessions with ExpressJS
-const MongoStore = require('connect-mongo');
-const flash = require('connect-flash');
-const customMware = require('./config/middleware');
+// const expressLayouts = require('express-ejs-layouts');
+import expressLayouts from 'express-ejs-layouts';
+// const db = require('./config/mongoose');
+import db from './config/mongoose';
+// // used for session cookie
+// const session = require('express-session');
+import session from 'express-session';
+// // Passport is a JS library used to manage user authentication related concerns
+// const passport = require('passport');
+import passport from 'passport';
+// const passportLocal = require('./config/passport-local-strategy');
+import passportLocal from './config/passport-local-strategy';
+// const passportJWT = require('./config/passport-jwt-strategy');
+import passportJWT from './config/passport-jwt-strategy';
+// const passportGoogle = require('./config/passport-google-oauth2-strategy');
+import passportGoogle from './config/passport-google-oauth2-strategy';
+// // Connect Mongo is a popular middleware designed to manage MongoDB sessions with ExpressJS
+// const MongoStore = require('connect-mongo');
+import MongoStore from 'connect-mongo';
+// const flash = require('connect-flash');
+import flash from 'connect-flash';
+// const customMware = require('./config/middleware');
+import customMware from './config/middleware';
 
-// setup the chat server to be used to with socket.io
-const chatServer = require('http').Server(app);
-const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
+// // setup the chat server to be used to with socket.io
+// const chatServer = require('http').Server(app);
+import chatServer from 'http'
+chatServer.Server(app)
+// const chatSockets = require('./config/chat_sockets').chatSockets(chatServer);
 chatServer.listen(5000, function (error) {
     if (error) {
       console.log("Error in setting up Chat Server");

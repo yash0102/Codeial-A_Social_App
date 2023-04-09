@@ -1,5 +1,8 @@
-const Post = require("../models/post");
-const User = require("../models/user");
+// const Post = require("../models/post");
+// const User = require("../models/user");
+
+import Post from '../models/post';
+import User from '../models/user';
 
 module.exports.home = async (req, res) => {
   // console.log(req.cookies);

@@ -1,9 +1,12 @@
-const express = require('express'); 
+// const express = require('express'); 
+import express from 'express';
 // Express create onces on main index.js file , it just fetch the existing instace
 const router = express.Router();
-const passport = require('passport');
+// const passport = require('passport');
+import passport from 'passport';
 
-const usersController = require('../controllers/users_controllers');
+// const usersController = require('../controllers/users_controllers');
+import usersController from '../controllers/users_controllers';
 
 router.get('/profile/:id', passport.ckeckAuthentication , usersController.profile);
 router.post('/update/:id', passport.ckeckAuthentication , usersController.update);
