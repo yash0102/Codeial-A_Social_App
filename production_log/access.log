@@ -4,3 +4,4 @@
 [0mPOST /users/create-session [36m302[0m 14.908 ms - 46[0m
 [0mGET / [32m200[0m 26.537 ms - 8890[0m
 [0mGET /posts/destroy/642acb097a264b31ee54e40c [32m200[0m 14.596 ms - 74[0m
+[0mGET / [32m200[0m 94.499 ms - 4133[0m
