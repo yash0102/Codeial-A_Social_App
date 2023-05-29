@@ -559,3 +559,5 @@
 [0mGET /users/profile/640dacb3c0e5a663e7da8079 [32m200[0m 34.999 ms - 2183[0m
 [0mGET /users/profile/640dacb3c0e5a663e7da8079 [36m302[0m 12.750 ms - 72[0m
 [0mGET /users/sign-in [36m304[0m 33.922 ms - -[0m
+::1 - - [29/May/2023:20:59:07 +0000] "GET /users/sign-in HTTP/1.1" 304 - "http://localhost:8000/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"
+::1 - - [29/May/2023:20:59:15 +0000] "GET / HTTP/1.1" 200 2379 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36"
