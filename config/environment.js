@@ -5,9 +5,10 @@ const path = require('path');
 const logDirectory = path.join(__dirname, '../production_log');
 fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
 
-const accessLogStream = rfs.createStream('access.log', {
-    interval: '1d',
-    path: logDirectory
+// create a rotating write stream
+const accessLogStream = rfs.createStream("access.log", {
+    interval: "1d", // rotate daily
+    path: logDirectory,
 });
 
 const development = {
@@ -19,7 +20,7 @@ const development = {
         service: 'gmail',
         host: 'smtp.gmail.com',
         port: 587,
-        secure: false,
+        secure: false, // true for 465, false for other ports
         auth: {
             user: 'yash.dcpd@gmail.com',
             pass: 'fvsfwxubojxztjnw'
