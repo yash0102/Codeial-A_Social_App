@@ -43,6 +43,7 @@ const chatSockets = require("./config/chat_sockets").chatSockets(chatServer);
 
 //For logging purppose
 const logger = require("morgan");
+require('./config/view-helpers')(app);
 const path = require("path");
 
 chatServer.listen(5000, function (error) {

@@ -62,6 +62,8 @@ const production = {
     }
 }
 
-// module.exports = development;
 
-module.exports = eval(process.env.CODEIAL_ENVIRONMENT) == undefined ? development : eval(process.env.CODEIAL_ENVIRONMENT);
+module.exports = eval(process.env.NODE_ENV) == undefined? development: eval(process.env.NODE_ENV);
+
+// module.exports = development;
+// module.exports = eval(process.env.CODEIAL_ENVIRONMENT) == undefined ? development : eval(process.env.CODEIAL_ENVIRONMENT);
