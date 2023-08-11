@@ -1,10 +1,12 @@
+require("dotenv").config();
 // 1)Setting Up express server
 const express = require("express");
 const app = express();
 const env = require("./config/environment");
 
 // 2)Defining port no.
-const port = 8000;
+const port = process.env.PORT || 3000;
+// console.log("ENV PORT ",process.env.PORT);
 
 // 6)Installing and acquiring express-ejs-layouts
 const expressLayouts = require("express-ejs-layouts");
@@ -124,9 +126,9 @@ app.use(
 );
 
 // Passport Initialize middleware starts for authentication
-app.use(passport.initialize()); 
+app.use(passport.initialize());
 
- // Creates a login session for users using Passport Middlware.
+// Creates a login session for users using Passport Middlware.
 app.use(passport.session());
 
 // Calling setAuthenticatedUser on every request allwos only authenticated users to access certain routes/routes that require authentication

@@ -16,6 +16,7 @@ const development = {
     asset_path : './assets',
     session_cookie_key: 'blahsomething',
     db: 'codeial_development',
+    // db: 'development',
     smtp: {
         service: 'gmail',
         host: 'smtp.gmail.com',

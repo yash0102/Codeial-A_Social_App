@@ -6,6 +6,9 @@ mongoose.set('strictQuery', false); // Set the strictQuery option
 // console.log(`${env.db}`);
 mongoose.connect(`mongodb://127.0.0.1/${env.db}`);
 
+// mongoose.connect(`mongodb://127.0.0.1/${env.CODEIAL_DB}`);
+// console.log("Database ",env);
+
 const db = mongoose.connection;
 
 db.on('error',console.error.bind(console,'Error connecting to MongoDB'));
